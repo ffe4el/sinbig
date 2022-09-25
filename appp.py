@@ -10,6 +10,8 @@ import matplotlib as plt
 # from vega_datasets import data
 import plotly.express as px
 
+
+
 # df = pd.read_csv("C:/data_015.csv", sep=",", encoding='cp949')
 
 df2 = pd.read_csv('C:/sinbig/sinbig/user_fin.csv')
@@ -17,30 +19,39 @@ st.dataframe(df2.head())
 
 fig1 = px.bar(df2, x='P2', y="P2_count", color="P1", title="연령대별 신한 계열사 이용 남녀 비율")
 # st.plotly_chart(fig1)
-fig1.show()
-fig1.write_image("fig1.pdf")
+# fig1.show()
+# fig1.write_image("fig1.png") #아니 kaleido 사용하면 저장된다며
 
 
 
 fig2 = px.pie(df2, values='consumer_count', names="consumer_type", title='신한라이프 활동 고객 비율')      #plotly pie차트
 st.plotly_chart(fig2)
 
+
+
 fig3 = px.pie(df2, values='age_total', names="age", title='신한라이프 활동 고객 연령대 비율')      #plotly pie차트
 st.plotly_chart(fig3)
 
-# fig4 = px.histogram(df2, y='P3_count', x="P2", color="P1", barmode='group', title='신한은행 활동 고객 비율')
-# st.plotly_chart(fig4)
-#
-# fig5 = px.histogram(df2, y='P4_count', x="P2",color="P1", barmode='group', title='신한카드 우수 고객 비율')
-# st.plotly_chart(fig5)
-#
-# fig6 = px.histogram(df2, y='P5_count', x="P2", color="P1", barmode='group', title='신한금투 활동 고객 비율')
-# st.plotly_chart(fig6)
+fig33 = px.histogram(df2, y='숫자', x="나이2개", color="연령별 고객유형", barmode='group', title='연령대별 고객, 비고객 그래프')
+# fig33.show()
 
-# fig7 = px.bar(df2, x="종류", y="고객수", color="나이", title="결제은행")
-# st.plotly_chart(fig7)
+fig4 = px.histogram(df2, y='P3_count', x="P2", color="P1", barmode='group', title='신한은행 활동 고객 비율')
+# st.plotly_chart(fig4)
+# fig4.show()
 #
-# fig8 = px.bar(df2, x="종류1", y="고객수1", color="나이1", title="결제증권사")
+fig5 = px.histogram(df2, y='P4_count', x="P2",color="P1", barmode='group', title='신한카드 우수 고객 비율')
+# st.plotly_chart(fig5)
+# fig5.show()
+#
+fig6 = px.histogram(df2, y='P5_count', x="P2", color="P1", barmode='group', title='신한금투 활동 고객 비율')
+# st.plotly_chart(fig6)
+# fig6.show()
+
+fig7 = px.bar(df2, x="종류", y="고객수", color="나이", title="결제은행")
+# st.plotly_chart(fig7)
+fig7.show()
+#
+fig8 = px.bar(df2, x="종류1", y="고객수1", color="나이1", title="결제증권사")
 # st.plotly_chart(fig8)
 
 #---20대
