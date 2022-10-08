@@ -49,10 +49,11 @@ fig6 = px.histogram(df2, y='P5_count', x="P2", color="P1", barmode='group', titl
 
 fig7 = px.bar(df2, x="종류", y="고객수", color="나이", title="결제은행")
 # st.plotly_chart(fig7)
-fig7.show()
+# fig7.show()
 #
 fig8 = px.bar(df2, x="종류1", y="고객수1", color="나이1", title="결제증권사")
 # st.plotly_chart(fig8)
+# fig8.show()
 
 #---20대
 # ---
@@ -62,6 +63,7 @@ st.dataframe(df.head())
 
 fig9 = px.pie(df, values='20대_총사용금액', names="소비유형", title='20대 소비유형 대분류')      #plotly pie차트
 st.plotly_chart(fig9)
+# fig9.show()
 
 fig14 = px.bar(df, x="2세부소비유형1순위", y="20대_사용금액1", title="20대 세부소비유형 1순위")
 st.plotly_chart(fig14)
